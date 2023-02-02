@@ -18,6 +18,7 @@ Clone the repository:
 Build the docker image:
     
     ```bash
+    cd zipcode-app
     docker build -t zipcode-app .
     ```
 
@@ -57,7 +58,7 @@ Run the docker container:
     docker run -p 5002:5000 weather-app
     ```
 
-#Integration
+#Integration - connect two services
 
 client.py is a simple client that integrates the two microservices. It takes a zipcode as input and returns the weather for that zipcode.
 

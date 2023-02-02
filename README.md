@@ -12,19 +12,19 @@ These instructions will get you a copy of the project up and running on your loc
 Clone the repository:
     
     ```bash
-    git clone https://github.com/peng-shan/zipcode-microservice.git
+    git clone https://github.com/peng-shan/zipcode-app.git
     ```
 
 Build the docker image:
     
     ```bash
-    docker build -t zipcode-microservice .
+    docker build -t zipcode-app .
     ```
 
 Run the docker container:
     
     ```bash
-    docker run -p 5000:5000 zipcode-microservice
+    docker run -p 5001:5000 zipcode-app
     ```
 
 # Weather Microservice
@@ -41,19 +41,20 @@ These instructions will get you a copy of the project up and running on your loc
 Clone the repository:
     
     ```bash
-    git clone https://github.com/peng-shan/weather-microservice.git
+    git clone https://github.com/peng-shan/weather-app.git
     ```
 
 Build the docker image:
     
     ```bash
-    docker build -t weather-microservice .
+    cd weather-app
+    docker build -t weather-app .
     ```
 
 Run the docker container:
     
     ```bash
-    docker run -p 5001:5001 weather-microservice
+    docker run -p 5002:5000 weather-app
     ```
 
 #Integration
@@ -65,7 +66,7 @@ client.py is a simple client that integrates the two microservices. It takes a z
     ```bash
     python client.py
     ```
-    
+
 
 
 

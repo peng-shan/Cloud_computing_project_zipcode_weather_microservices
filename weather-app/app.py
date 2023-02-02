@@ -1,21 +1,21 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-import requests
 
 app = Flask(__name__)
 api = Api(app)
 
+weathers = {
+    '11111': {'temperature': 72, 'condition': 'Sunny'},
+    '22222': {'temperature': 80, 'condition': 'Sunny'},
+    '33333': {'temperature': 60, 'condition': 'Cloudy'}
+}
 class Weather(Resource):
     def get(self, zipcode):
-        zipcode_url = f'http://zipcode-microservice:5000/zipcode/{zipcode}'
-        r = requests.get(zipcode_url)
-        if r.status_code == 200:
-            area = r.json()[zipcode]
-            # Get weather information for the area using a weather API
-            weather = {'area': area, 'temperature': 72, 'condition': 'Sunny'}
-            return weather
+        # Get weather information for the zipcode using a weather API
+        if zipcode in weathers:
+            return weathers[zipcode]
         else:
-            return {'error': 'Zipcode not found'}, 404
+            return {'message': 'Zipcode not found'}, 404
 
 api.add_resource(Weather, '/weather/<string:zipcode>')
 

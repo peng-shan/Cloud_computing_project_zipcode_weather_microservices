@@ -5,8 +5,8 @@ app = Flask(__name__)
 api = Api(app)
 
 zipcodes = {
-    'New York': '11111',
-    'Los Angeles': '22222',
+    'New-York': '11111',
+    'Los-Angeles': '22222',
     'Chicago': '33333'
 }
 
@@ -20,4 +20,4 @@ class Zipcode(Resource):
 api.add_resource(Zipcode, '/zipcode/<string:area>')
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(debug=True)

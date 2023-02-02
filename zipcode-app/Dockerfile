@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install the required packages
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -U --no-cache-dir -r requirements.txt
 
 # Copy the app code
 COPY app.py .

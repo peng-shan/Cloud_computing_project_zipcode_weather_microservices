@@ -68,6 +68,18 @@ client.py is a simple client that integrates the two microservices. It takes a z
     python client.py
     ```
 
+## Output
+
+### build images and run containers
+
+![Alt image1](./Outputs_screenshot/Picture1.png)
+![Alt image2](./Outputs_screenshot/Picture2.png)
+![Alt image3](./Outputs_screenshot/Picture3.png)
+![Alt image4](./Outputs_screenshot/Picture4.png)
+
+### run client.py
+![Alt image5](./Outputs_screenshot/Picture5.png)
+
 
 
 

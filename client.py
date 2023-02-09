@@ -1,18 +1,12 @@
 import requests
 
 def get_weather(area):
-    zipcode_url = f'http://localhost:5001/zipcode/{area}'
-    r = requests.get(zipcode_url)
-    if r.status_code == 200:
-        zipcode = r.json()[area]
-        weather_url = f'http://localhost:5002/weather/{zipcode}'
-        r = requests.get(weather_url)
-        if r.status_code == 200:
-            return r.json()
-        else:
-            return {'error': 'Error getting weather information'}
+    url = f'http://localhost:5001/zipcode/{area}'
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
     else:
-        return {'error': 'Area not found'}
+        return None
 
 def main():
     print(get_weather('Chicago'))
